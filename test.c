@@ -1,24 +1,38 @@
 #include <stdlib.h>
-#define N 10
 
-void foo() {
-  int *p = (int *)malloc(sizeof(int) * N);
+void foo1(int n) {
+  int *p = (int *)malloc(sizeof(int) * n);
 
-  for (int i = 0; i < N; i++) {
+  for (int i = 0; i < n; i++) {
     p[i] = i;
   }
+}
 
-  p = (int *)malloc(sizeof(int) * N);
+int foo2(int n) {
+  int *p = (int *)malloc(sizeof(int) * n);
 
-  int *p2 = p + 3;
-  int *p3 = p + 5;
+  // we need to maintain more metadata of bounds to this line
+  int *q = p + 2;
 
-  p++;
+  int res = *(p + 1);
+  free(p);
 
-  int *p4 = (int *)((long)p + 3);
+  return res;
+}
 
-  int q = 10;
-  int *q2 = &q;
-  (*q2)++;
-  q2 = q2 + 10;
+int foo3(int *p) {
+  // we need to maintain more metadata of bounds to this line
+  return *p++;
+}
+
+int foo4(int n) {
+  int *p = (int *)malloc(sizeof(int) * n);
+
+  // we need to maintain more metadata of bounds to this line
+  int *q = (int *)((long)p + 1);
+
+  int res = *q;
+  free(p);
+
+  return res;
 }

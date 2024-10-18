@@ -6,12 +6,10 @@
 
 namespace llvm {
 
-  class CPointerTypeClass : public PassInfoMixin<CPointerTypeClass> {
+  class CPTCPass : public PassInfoMixin<CPTCPass> {
     public:
       PreservedAnalyses run(Module &M, ModuleAnalysisManager &AM);
       StringRef getPassName() const { return "C Pointer Type Classification Pass"; }
-    private:
-      FunctionCallee query;
   };
 } // namespace llvm
 
