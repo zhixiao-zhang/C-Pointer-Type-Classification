@@ -4,6 +4,7 @@
 #include "llvm/IR/InstIterator.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/IR/Module.h"
+#include "llvm/Support/raw_ostream.h"
 
 using namespace llvm;
 
@@ -18,15 +19,23 @@ PreservedAnalyses CPTCPass::run(Module &M,
     for (inst_iterator I = inst_begin(F), E = inst_end(F); I != E; ++I) {
       // pattern 1: load ptr, gep, store ptr
       if (LoadInst *LI = dyn_cast<LoadInst>(&*I)) {
-        if (!LI->getPointerOperandType()->isPointerTy())
+        if (!LI->getType()->isPointerTy())
           continue;
         ++I;
         GetElementPtrInst *GEP = dyn_cast<GetElementPtrInst>(&*I);
-        if (!GEP || !GEP->getPointerOperandType()->isPointerTy())
+        // Exclude GEPs for function pointers which are member of a struct
+        if (!GEP)
           continue;
+        if (GEP->getSourceElementType()->isStructTy()) {
+          if (GEP->getNumOperands() != 2)
+            continue;
+        } else {
+          if (!GEP->getSourceElementType()->isIntOrIntVectorTy())
+            continue;
+        }
         ++I;
         StoreInst *SI = dyn_cast<StoreInst>(&*I);
-        if (!SI || !SI->getPointerOperandType()->isPointerTy())
+        if (!SI || !SI->getValueOperand()->getType()->isPointerTy())
           continue;
         ++NumPointerArith;
         errs() << "Found pattern 1 in Function " << F.getName() << "() (" << *LI << "; " << *GEP << "; " << *SI << ")\n";
@@ -35,7 +44,7 @@ PreservedAnalyses CPTCPass::run(Module &M,
       if (IntToPtrInst *ITP = dyn_cast<IntToPtrInst>(&*I)) {
         ++I;
         StoreInst *SI = dyn_cast<StoreInst>(&*I);
-        if (!SI || !SI->getPointerOperandType()->isPointerTy())
+        if (!SI || !SI->getValueOperand()->getType()->isPointerTy())
           continue;
         ++NumPointerArith;
         errs() << "Found pattern 2 in Function " << F.getName() << "()\n";

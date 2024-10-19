@@ -1,5 +1,10 @@
 #include <stdlib.h>
 
+struct S {
+  char a;
+  int b[10];
+};
+
 void foo1(int n) {
   int *p = (int *)malloc(sizeof(int) * n);
 
@@ -25,7 +30,15 @@ int foo3(int *p) {
   return *p++;
 }
 
-int foo4(int n) {
+void foo4(int n) {
+  struct S *p = (struct S *)malloc(sizeof(struct S) * n);
+
+  for (struct S *q = p; q; q++) {
+    q->a = 0;
+  }
+}
+
+int foo5(int n) {
   int *p = (int *)malloc(sizeof(int) * n);
 
   // we need to maintain more metadata of bounds to this line
@@ -36,3 +49,4 @@ int foo4(int n) {
 
   return res;
 }
+
