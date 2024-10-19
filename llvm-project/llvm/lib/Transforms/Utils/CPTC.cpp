@@ -31,6 +31,15 @@ PreservedAnalyses CPTCPass::run(Module &M,
         ++NumPointerArith;
         errs() << "Found pattern 1 in Function " << F.getName() << "() (" << *LI << "; " << *GEP << "; " << *SI << ")\n";
       }
+      // pattern 2: ptrtoint, arithmetic, inttoptr
+      if (IntToPtrInst *ITP = dyn_cast<IntToPtrInst>(&*I)) {
+        ++I;
+        StoreInst *SI = dyn_cast<StoreInst>(&*I);
+        if (!SI || !SI->getPointerOperandType()->isPointerTy())
+          continue;
+        ++NumPointerArith;
+        errs() << "Found pattern 2 in Function " << F.getName() << "()\n";
+      }
     }
   }
 

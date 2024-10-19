@@ -4,7 +4,7 @@ void foo1(int n) {
   int *p = (int *)malloc(sizeof(int) * n);
 
   for (int i = 0; i < n; i++) {
-    p[i] = i;
+    p[i] = p[i-1];
   }
 }
 
