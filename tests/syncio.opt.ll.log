@@ -1,0 +1,9 @@
+Found pattern 1 in Function syncWrite() (  %41 = load ptr, ptr %7, align 8;   %42 = getelementptr inbounds i8, ptr %41, i64 %40;   store ptr %42, ptr %7, align 8)
+Found pattern 1 in Function syncRead() (  %48 = load ptr, ptr %7, align 8;   %49 = getelementptr inbounds i8, ptr %48, i64 %47;   store ptr %49, ptr %7, align 8)
+Found pattern 1 in Function syncReadLine() (  %44 = load ptr, ptr %7, align 8;   %45 = getelementptr inbounds i8, ptr %44, i32 1;   store ptr %45, ptr %7, align 8)
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+3 CPTC - Number of pointer arithmetic operations
+

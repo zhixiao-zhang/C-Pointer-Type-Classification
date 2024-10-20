@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 
 struct S {
   char a;
@@ -38,7 +39,14 @@ void foo4(int n) {
   }
 }
 
-int foo5(int n) {
+void foo5(int n, const char *s) {
+  int *p = (int *)malloc(sizeof(int) * n);
+
+  // we need to maintain more metadata of bounds to this line
+  int *q = p + strlen(s);
+}
+
+int foo6(int n) {
   int *p = (int *)malloc(sizeof(int) * n);
 
   // we need to maintain more metadata of bounds to this line

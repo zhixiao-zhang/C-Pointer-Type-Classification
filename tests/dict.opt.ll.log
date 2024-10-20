@@ -1,0 +1,7 @@
+Found pattern 1 in Function dictGetStats() (  %26 = load ptr, ptr %5, align 8;   %27 = getelementptr inbounds i8, ptr %26, i64 %25;   store ptr %27, ptr %5, align 8)
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+1 CPTC - Number of pointer arithmetic operations
+

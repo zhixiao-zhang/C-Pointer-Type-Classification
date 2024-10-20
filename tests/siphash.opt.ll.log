@@ -1,0 +1,8 @@
+Found pattern 1 in Function siphash() (  %116 = load ptr, ptr %4, align 8;   %117 = getelementptr inbounds i8, ptr %116, i64 8;   store ptr %117, ptr %4, align 8)
+Found pattern 1 in Function siphash_nocase() (  %176 = load ptr, ptr %4, align 8;   %177 = getelementptr inbounds i8, ptr %176, i64 8;   store ptr %177, ptr %4, align 8)
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+2 CPTC - Number of pointer arithmetic operations
+

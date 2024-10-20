@@ -1,0 +1,9 @@
+Found pattern 1 in Function spt_init() (  %21 = load ptr, ptr %6, align 8;   %23 = getelementptr inbounds i8, ptr %20, i64 %22;   store ptr %23, ptr %8, align 8)
+Found pattern 1 in Function spt_init() (  %24 = load ptr, ptr %8, align 8;   %25 = getelementptr inbounds i8, ptr %24, i64 1;   store ptr %25, ptr %7, align 8)
+Found pattern 1 in Function setproctitle() (  %92 = load ptr, ptr %5, align 8;   %93 = getelementptr inbounds i8, ptr %92, i32 1;   store ptr %93, ptr %5, align 8)
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+3 CPTC - Number of pointer arithmetic operations
+

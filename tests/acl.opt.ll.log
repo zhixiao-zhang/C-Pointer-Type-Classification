@@ -1,0 +1,11 @@
+Found pattern 1 in Function ACLSelectorRemoveCommandRule() (  %23 = load ptr, ptr %6, align 8;   %24 = getelementptr inbounds i8, ptr %23, i64 1;   store ptr %24, ptr %6, align 8)
+Found pattern 1 in Function ACLSelectorRemoveCommandRule() (  %31 = load ptr, ptr %6, align 8;   %33 = getelementptr inbounds i8, ptr %30, i64 %32;   store ptr %33, ptr %8, align 8)
+Found pattern 1 in Function ACLSelectorRemoveCommandRule() (  %40 = load ptr, ptr %7, align 8;   %41 = getelementptr inbounds i8, ptr %40, i64 -1;   store ptr %41, ptr %7, align 8)
+Found pattern 1 in Function ACLSelectorRemoveCommandRule() (  %50 = load ptr, ptr %9, align 8;   %51 = getelementptr inbounds i8, ptr %50, i32 1;   store ptr %51, ptr %9, align 8)
+Found pattern 1 in Function ACLSetSelector() (  %344 = load ptr, ptr %16, align 8;   %345 = getelementptr inbounds i8, ptr %344, i32 1;   store ptr %345, ptr %16, align 8)
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5 CPTC - Number of pointer arithmetic operations
+

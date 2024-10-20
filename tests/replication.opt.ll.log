@@ -1,0 +1,13 @@
+Found pattern 1 in Function feedReplicationBuffer() (  %95 = load ptr, ptr %3, align 8;   %96 = getelementptr inbounds i8, ptr %95, i64 %94;   store ptr %96, ptr %3, align 8)
+Found pattern 1 in Function feedReplicationBuffer() (  %200 = load ptr, ptr %3, align 8;   %201 = getelementptr inbounds i8, ptr %200, i64 %199;   store ptr %201, ptr %3, align 8)
+Found pattern 1 in Function slaveTryPartialResynchronization() (  %105 = load ptr, ptr %9, align 8;   %106 = getelementptr inbounds i8, ptr %105, i32 1;   store ptr %106, ptr %9, align 8)
+Found pattern 1 in Function slaveTryPartialResynchronization() (  %112 = load ptr, ptr %10, align 8;   %113 = getelementptr inbounds i8, ptr %112, i32 1;   store ptr %113, ptr %10, align 8)
+Found pattern 1 in Function slaveTryPartialResynchronization() (  %167 = load ptr, ptr %8, align 8;   %168 = getelementptr inbounds i8, ptr %167, i64 10;   store ptr %168, ptr %11, align 8)
+Found pattern 1 in Function slaveTryPartialResynchronization() (  %169 = load ptr, ptr %8, align 8;   %170 = getelementptr inbounds i8, ptr %169, i64 9;   store ptr %170, ptr %12, align 8)
+Found pattern 1 in Function slaveTryPartialResynchronization() (  %192 = load ptr, ptr %12, align 8;   %193 = getelementptr inbounds i8, ptr %192, i32 1;   store ptr %193, ptr %12, align 8)
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+7 CPTC - Number of pointer arithmetic operations
+

@@ -1,0 +1,9 @@
+Found pattern 1 in Function execCommandAbort() (  %12 = load ptr, ptr %4, align 8;   %13 = getelementptr inbounds i8, ptr %12, i32 1;   store ptr %13, ptr %4, align 8)
+Found pattern 1 in Function touchWatchedKey() (  %40 = load ptr, ptr %7, align 8;   %41 = getelementptr inbounds i8, ptr %40, i64 0;   store ptr %41, ptr %8, align 8)
+Found pattern 1 in Function touchAllWatchedKeysInDb() (  %72 = load ptr, ptr %6, align 8;   %73 = getelementptr inbounds i8, ptr %72, i64 0;   store ptr %73, ptr %12, align 8)
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+3 CPTC - Number of pointer arithmetic operations
+

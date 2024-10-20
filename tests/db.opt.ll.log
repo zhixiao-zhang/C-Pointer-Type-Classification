@@ -1,0 +1,8 @@
+Found pattern 1 in Function doesCommandHaveChannelsWithFlags() (  %40 = load ptr, ptr %6, align 8;   %41 = getelementptr inbounds %struct.ChannelSpecs, ptr %40, i64 1;   store ptr %41, ptr %6, align 8)
+Found pattern 1 in Function getChannelsFromCommand() (  %100 = load ptr, ptr %11, align 8;   %101 = getelementptr inbounds %struct.ChannelSpecs, ptr %100, i64 1;   store ptr %101, ptr %11, align 8)
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+2 CPTC - Number of pointer arithmetic operations
+
