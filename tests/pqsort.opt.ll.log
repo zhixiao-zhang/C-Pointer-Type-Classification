@@ -1,0 +1,14 @@
+Found pattern 1 in Function _pqsort() (  %115 = load ptr, ptr %18, align 8;   %116 = getelementptr inbounds i8, ptr %115, i64 %114;   store ptr %116, ptr %18, align 8)
+Found pattern 1 in Function _pqsort() (  %240 = load ptr, ptr %13, align 8;   %241 = getelementptr inbounds i8, ptr %240, i64 %239;   store ptr %241, ptr %13, align 8)
+Found pattern 1 in Function _pqsort() (  %244 = load ptr, ptr %14, align 8;   %245 = getelementptr inbounds i8, ptr %244, i64 %243;   store ptr %245, ptr %14, align 8)
+Found pattern 1 in Function _pqsort() (  %311 = load ptr, ptr %14, align 8;   %312 = getelementptr inbounds i8, ptr %311, i64 %310;   store ptr %312, ptr %14, align 8)
+Found pattern 1 in Function swapfunc() (  %29 = load ptr, ptr %10, align 8;   %30 = getelementptr inbounds i64, ptr %29, i32 1;   store ptr %30, ptr %10, align 8)
+Found pattern 1 in Function swapfunc() (  %32 = load ptr, ptr %11, align 8;   %33 = getelementptr inbounds i64, ptr %32, i32 1;   store ptr %33, ptr %11, align 8)
+Found pattern 1 in Function swapfunc() (  %49 = load ptr, ptr %14, align 8;   %50 = getelementptr inbounds i8, ptr %49, i32 1;   store ptr %50, ptr %14, align 8)
+Found pattern 1 in Function swapfunc() (  %52 = load ptr, ptr %15, align 8;   %53 = getelementptr inbounds i8, ptr %52, i32 1;   store ptr %53, ptr %15, align 8)
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+8 CPTC - Number of pointer arithmetic operations
+

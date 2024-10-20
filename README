@@ -1,3 +1,3 @@
-The file CPTC.cpp in the root directory is a hard link to the file in llvm-project/llvm/lib/Transforms/Utils/CPTC.cpp.
+The path of CPTC.cpp is llvm-project/llvm/lib/Transforms/Utils/CPTC.cpp.
 
 TBD

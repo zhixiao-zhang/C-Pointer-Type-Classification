@@ -1,0 +1,7 @@
+Found pattern 1 in Function keyspaceEventsStringToFlags() (  %9 = load ptr, ptr %4, align 8;   %10 = getelementptr inbounds i8, ptr %9, i32 1;   store ptr %10, ptr %4, align 8)
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+1 CPTC - Number of pointer arithmetic operations
+

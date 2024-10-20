@@ -1,0 +1,8 @@
+Found pattern 2 in Function ebGetListPtr()
+Found pattern 2 in Function ebMarkAsList()
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+2 CPTC - Number of pointer arithmetic operations
+
