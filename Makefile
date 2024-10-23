@@ -27,9 +27,13 @@ cptc: $(INCLUDE_DIR)/CPTC.h $(SRC_DIR)/CPTC.cpp
 	@echo "Compiling CPTC"
 	cd $(BUILD_DIR) && ninja opt
 
-test: test.c cptc
+test: cptc
 	$(CC) -c -emit-llvm -S test.c -o test.ll
 	$(OPT) -stats -S -passes=cptc test.ll -o test.opt.ll
+
+test-parson: cptc parson/parson.c
+	$(CC) -c -emit-llvm -S parson/parson.c -o parson.ll
+	$(OPT) -stats -S -passes=cptc parson.ll -o parson.opt.ll &> parson.opt.ll.log
 
 opt: cptc all-opt
 
@@ -40,4 +44,4 @@ all-opt: $(LL_OPT_FILES)
 
 .PHONY: all clean
 clean:
-	rm -f *.ll
+	rm -f *.ll *.log

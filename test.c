@@ -6,6 +6,8 @@ struct S {
   int b[10];
 };
 
+static void test(int *p);
+
 void foo1(int n) {
   int *p = (int *)malloc(sizeof(int) * n);
 
@@ -46,7 +48,13 @@ void foo5(int n, const char *s) {
   int *q = p + strlen(s);
 }
 
-int foo6(int n) {
+void foo6(int n) {
+  int *p = (int *)malloc(sizeof(int) * n);
+
+  test(p+1);
+}
+
+int foo7(int n) {
   int *p = (int *)malloc(sizeof(int) * n);
 
   // we need to maintain more metadata of bounds to this line
