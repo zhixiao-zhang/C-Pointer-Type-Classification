@@ -1,7 +1,0 @@
-Found pattern 1 in Function raxRemoveChild() (  %81 = load ptr, ptr %9, align 8;   %82 = getelementptr inbounds i8, ptr %81, i32 1;   store ptr %82, ptr %9, align 8)
-===-------------------------------------------------------------------------===
-                          ... Statistics Collected ...
-===-------------------------------------------------------------------------===
-
-1 CPTC - Number of pointer arithmetic operations
-

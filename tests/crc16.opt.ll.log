@@ -1,7 +1,0 @@
-Found pattern 1 in Function crc16() (  %18 = load ptr, ptr %3, align 8;   %19 = getelementptr inbounds i8, ptr %18, i32 1;   store ptr %19, ptr %3, align 8)
-===-------------------------------------------------------------------------===
-                          ... Statistics Collected ...
-===-------------------------------------------------------------------------===
-
-1 CPTC - Number of pointer arithmetic operations
-

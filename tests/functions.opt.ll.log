@@ -1,8 +1,0 @@
-Found pattern 1 in Function functionListReplyFlags() (  %27 = load ptr, ptr %6, align 8;   %28 = getelementptr inbounds %struct.scriptFlag, ptr %27, i32 1;   store ptr %28, ptr %6, align 8)
-Found pattern 1 in Function functionListReplyFlags() (  %54 = load ptr, ptr %7, align 8;   %55 = getelementptr inbounds %struct.scriptFlag, ptr %54, i32 1;   store ptr %55, ptr %7, align 8)
-===-------------------------------------------------------------------------===
-                          ... Statistics Collected ...
-===-------------------------------------------------------------------------===
-
-2 CPTC - Number of pointer arithmetic operations
-

@@ -1,8 +1,0 @@
-Found pattern 1 in Function kvstoreGetStats() (  %73 = load ptr, ptr %6, align 8;   %74 = getelementptr inbounds i8, ptr %73, i64 %72;   store ptr %74, ptr %6, align 8)
-Found pattern 1 in Function kvstoreGetStats() (  %92 = load ptr, ptr %6, align 8;   %93 = getelementptr inbounds i8, ptr %92, i64 %91;   store ptr %93, ptr %6, align 8)
-===-------------------------------------------------------------------------===
-                          ... Statistics Collected ...
-===-------------------------------------------------------------------------===
-
-2 CPTC - Number of pointer arithmetic operations
-
