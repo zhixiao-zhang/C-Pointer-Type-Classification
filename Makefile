@@ -3,37 +3,31 @@ BUILD_DIR := $(ROOT_DIR)/llvm-project/build
 INCLUDE_DIR := $(ROOT_DIR)/llvm-project/llvm/include/llvm/Transforms/Utils
 SRC_DIR := $(ROOT_DIR)/llvm-project/llvm/lib/Transforms/Utils
 TEST_DIR := $(ROOT_DIR)/tests
+TEST_SOURCE_DIR ?= $(ROOT_DIR)
 
 CC := clang
 OPT := $(BUILD_DIR)/bin/opt
 
 CFLAGS := -c -emit-llvm -S -I/opt/homebrew/opt/lua/include/lua
 
-TEST_FILES := $(wildcard redis/src/*.c)
+TEST_FILES := $(wildcard $(TEST_SOURCE_DIR)/*.c)
 TEST_LL_FILES := $(TEST_FILES:.c=.ll)
-LL_FILES := $(patsubst redis/src/%.ll, tests/%.ll, $(TEST_FILES:.c=.ll))
+LL_FILES := $(patsubst $(TEST_SOURCE_DIR)/%.ll, tests/%.ll, $(TEST_LL_FILES))
 LL_OPT_FILES := $(LL_FILES:.ll=.opt.ll)
 
 all: all-tests
 
-redis/src/%.ll: redis/src/%.c
+$(TEST_SOURCE_DIR)/%.ll: $(TEST_SOURCE_DIR)/%.c
 	@echo "Compiling src to human-readable LLVM IR"
 	- $(CC) $(CFLAGS) $< -o $@
 
 all-tests: $(TEST_LL_FILES)
-	mv redis/src/*.ll $(TEST_DIR)
+	mkdir -p $(TEST_DIR)
+	mv $(TEST_SOURCE_DIR)/*.ll $(TEST_DIR)
 
 cptc: $(INCLUDE_DIR)/CPTC.h $(SRC_DIR)/CPTC.cpp
 	@echo "Compiling CPTC"
 	cd $(BUILD_DIR) && ninja opt
-
-test: cptc
-	$(CC) -c -emit-llvm -S test.c -o test.ll
-	$(OPT) -stats -S -passes=cptc test.ll -o test.opt.ll
-
-test-parson: cptc parson/parson.c
-	$(CC) -c -emit-llvm -S parson/parson.c -o parson.ll
-	$(OPT) -stats -S -passes=cptc parson.ll -o parson.opt.ll &> parson.opt.ll.log
 
 opt: cptc all-opt
 
